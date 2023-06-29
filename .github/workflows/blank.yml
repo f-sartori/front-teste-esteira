@@ -17,13 +17,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
-      
-      - name: Entrar no projeto
-        run: cd projetoAngularEsteira/src/app
 
-      - name: Instalar dependências
-        run: npm ci
-
-      - name: Compilar a aplicação Angular
-        run: npm run build
+      - name: Install dependencies
+        run: npm install
+    
+      - name: Run tests
+        run: npm run test:headless
+    
+      - name: Build
+        run: npm run build:prod
 
