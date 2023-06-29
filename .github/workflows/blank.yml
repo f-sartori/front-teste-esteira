@@ -1,0 +1,26 @@
+name: Deploy da Aplicação Angular
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v2
+
+      - name: Configurar o ambiente Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Compilar a aplicação Angular
+        run: npm run build
+
