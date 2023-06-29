@@ -19,8 +19,8 @@ jobs:
           node-version: 14
       
       - name: Entrar no projeto
-        run: cd app/testeProjetoAngular/src/app
-            
+        run: cd projetoAngularEsteira/src/app
+
       - name: Instalar dependências
         run: npm ci
 
